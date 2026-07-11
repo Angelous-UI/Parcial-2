@@ -1,0 +1,27 @@
+# ============================================================
+# Archivo de entrada del Simulador 1 - Asignacion de Memoria
+# ------------------------------------------------------------
+# Reglas del formato (texto plano):
+#   - Las lineas que empiezan con '#' son comentarios (se ignoran).
+#   - Las lineas en blanco se ignoran.
+#   - Directivas de configuracion (van primero):
+#       MEMORIA <KB>        -> tamano total de la RAM
+#       UNIDAD <KB>         -> unidad de asignacion (redondeo)
+#       ESTRATEGIA <clave>  -> first | best | worst
+#   - Operaciones (se ejecutan en orden):
+#       ASIGNAR <PID> <KB>  -> crea un proceso y pide memoria
+#       LIBERAR <PID>       -> libera el proceso indicado
+# ============================================================
+
+MEMORIA 1024
+UNIDAD 64
+ESTRATEGIA first
+
+ASIGNAR P1 200
+ASIGNAR P2 100
+ASIGNAR P3 300
+LIBERAR P2
+ASIGNAR P4 80
+ASIGNAR P5 250
+LIBERAR P1
+ASIGNAR P6 150

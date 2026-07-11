@@ -1,0 +1,153 @@
+SIMULADOR 1 - ASIGNACION DE MEMORIA (modo por lotes)
+Archivo de entrada: datos/entrada.txt
+
+ESTADO INICIAL:
+================================================================
+MEMORIA  |  total=1024KB  unidad=64KB  estrategia=First Fit
+================================================================
+Mapa de bloques (ordenado por dirección):
+  [   0 - 1024)  LIBRE      (1024KB)
+----------------------------------------------------------------
+Ocupada total .......... 0KB
+Libre total ............ 1024KB
+Huecos libres .......... 1 (1024KB)
+Fragmentación INTERNA .. 0KB
+Fragmentación EXTERNA .. 0KB
+================================================================
+
+>> ASIGNAR P1 (200KB)  ->  OK
+================================================================
+MEMORIA  |  total=1024KB  unidad=64KB  estrategia=First Fit
+================================================================
+Mapa de bloques (ordenado por dirección):
+  [   0 -  256)  OCUPADO P1   reservado=256KB, usado=200KB, frag.interna=56KB
+  [ 256 - 1024)  LIBRE      (768KB)
+----------------------------------------------------------------
+Ocupada total .......... 256KB
+Libre total ............ 768KB
+Huecos libres .......... 1 (768KB)
+Fragmentación INTERNA .. 56KB
+Fragmentación EXTERNA .. 0KB
+================================================================
+
+>> ASIGNAR P2 (100KB)  ->  OK
+================================================================
+MEMORIA  |  total=1024KB  unidad=64KB  estrategia=First Fit
+================================================================
+Mapa de bloques (ordenado por dirección):
+  [   0 -  256)  OCUPADO P1   reservado=256KB, usado=200KB, frag.interna=56KB
+  [ 256 -  384)  OCUPADO P2   reservado=128KB, usado=100KB, frag.interna=28KB
+  [ 384 - 1024)  LIBRE      (640KB)
+----------------------------------------------------------------
+Ocupada total .......... 384KB
+Libre total ............ 640KB
+Huecos libres .......... 1 (640KB)
+Fragmentación INTERNA .. 84KB
+Fragmentación EXTERNA .. 0KB
+================================================================
+
+>> ASIGNAR P3 (300KB)  ->  OK
+================================================================
+MEMORIA  |  total=1024KB  unidad=64KB  estrategia=First Fit
+================================================================
+Mapa de bloques (ordenado por dirección):
+  [   0 -  256)  OCUPADO P1   reservado=256KB, usado=200KB, frag.interna=56KB
+  [ 256 -  384)  OCUPADO P2   reservado=128KB, usado=100KB, frag.interna=28KB
+  [ 384 -  704)  OCUPADO P3   reservado=320KB, usado=300KB, frag.interna=20KB
+  [ 704 - 1024)  LIBRE      (320KB)
+----------------------------------------------------------------
+Ocupada total .......... 704KB
+Libre total ............ 320KB
+Huecos libres .......... 1 (320KB)
+Fragmentación INTERNA .. 104KB
+Fragmentación EXTERNA .. 0KB
+================================================================
+
+>> LIBERAR P2  ->  OK
+================================================================
+MEMORIA  |  total=1024KB  unidad=64KB  estrategia=First Fit
+================================================================
+Mapa de bloques (ordenado por dirección):
+  [   0 -  256)  OCUPADO P1   reservado=256KB, usado=200KB, frag.interna=56KB
+  [ 256 -  384)  LIBRE      (128KB)
+  [ 384 -  704)  OCUPADO P3   reservado=320KB, usado=300KB, frag.interna=20KB
+  [ 704 - 1024)  LIBRE      (320KB)
+----------------------------------------------------------------
+Ocupada total .......... 576KB
+Libre total ............ 448KB
+Huecos libres .......... 2 (128KB, 320KB)
+Fragmentación INTERNA .. 76KB
+Fragmentación EXTERNA .. 128KB
+================================================================
+
+>> ASIGNAR P4 (80KB)  ->  OK
+================================================================
+MEMORIA  |  total=1024KB  unidad=64KB  estrategia=First Fit
+================================================================
+Mapa de bloques (ordenado por dirección):
+  [   0 -  256)  OCUPADO P1   reservado=256KB, usado=200KB, frag.interna=56KB
+  [ 256 -  384)  OCUPADO P4   reservado=128KB, usado=80KB, frag.interna=48KB
+  [ 384 -  704)  OCUPADO P3   reservado=320KB, usado=300KB, frag.interna=20KB
+  [ 704 - 1024)  LIBRE      (320KB)
+----------------------------------------------------------------
+Ocupada total .......... 704KB
+Libre total ............ 320KB
+Huecos libres .......... 1 (320KB)
+Fragmentación INTERNA .. 124KB
+Fragmentación EXTERNA .. 0KB
+================================================================
+
+>> ASIGNAR P5 (250KB)  ->  OK
+================================================================
+MEMORIA  |  total=1024KB  unidad=64KB  estrategia=First Fit
+================================================================
+Mapa de bloques (ordenado por dirección):
+  [   0 -  256)  OCUPADO P1   reservado=256KB, usado=200KB, frag.interna=56KB
+  [ 256 -  384)  OCUPADO P4   reservado=128KB, usado=80KB, frag.interna=48KB
+  [ 384 -  704)  OCUPADO P3   reservado=320KB, usado=300KB, frag.interna=20KB
+  [ 704 -  960)  OCUPADO P5   reservado=256KB, usado=250KB, frag.interna=6KB
+  [ 960 - 1024)  LIBRE      (64KB)
+----------------------------------------------------------------
+Ocupada total .......... 960KB
+Libre total ............ 64KB
+Huecos libres .......... 1 (64KB)
+Fragmentación INTERNA .. 130KB
+Fragmentación EXTERNA .. 0KB
+================================================================
+
+>> LIBERAR P1  ->  OK
+================================================================
+MEMORIA  |  total=1024KB  unidad=64KB  estrategia=First Fit
+================================================================
+Mapa de bloques (ordenado por dirección):
+  [   0 -  256)  LIBRE      (256KB)
+  [ 256 -  384)  OCUPADO P4   reservado=128KB, usado=80KB, frag.interna=48KB
+  [ 384 -  704)  OCUPADO P3   reservado=320KB, usado=300KB, frag.interna=20KB
+  [ 704 -  960)  OCUPADO P5   reservado=256KB, usado=250KB, frag.interna=6KB
+  [ 960 - 1024)  LIBRE      (64KB)
+----------------------------------------------------------------
+Ocupada total .......... 704KB
+Libre total ............ 320KB
+Huecos libres .......... 2 (256KB, 64KB)
+Fragmentación INTERNA .. 74KB
+Fragmentación EXTERNA .. 64KB
+================================================================
+
+>> ASIGNAR P6 (150KB)  ->  OK
+================================================================
+MEMORIA  |  total=1024KB  unidad=64KB  estrategia=First Fit
+================================================================
+Mapa de bloques (ordenado por dirección):
+  [   0 -  192)  OCUPADO P6   reservado=192KB, usado=150KB, frag.interna=42KB
+  [ 192 -  256)  LIBRE      (64KB)
+  [ 256 -  384)  OCUPADO P4   reservado=128KB, usado=80KB, frag.interna=48KB
+  [ 384 -  704)  OCUPADO P3   reservado=320KB, usado=300KB, frag.interna=20KB
+  [ 704 -  960)  OCUPADO P5   reservado=256KB, usado=250KB, frag.interna=6KB
+  [ 960 - 1024)  LIBRE      (64KB)
+----------------------------------------------------------------
+Ocupada total .......... 896KB
+Libre total ............ 128KB
+Huecos libres .......... 2 (64KB, 64KB)
+Fragmentación INTERNA .. 116KB
+Fragmentación EXTERNA .. 64KB
+================================================================
